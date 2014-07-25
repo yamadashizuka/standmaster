@@ -1,0 +1,25 @@
+<%= form_for(@memberscar) do |f| %>
+  <% if @memberscar.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@memberscar.errors.count, "error") %> prohibited this memberscar from being saved:</h2>
+
+      <ul>
+      <% @memberscar.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :numberplate %><br>
+    <%= f.text_field :numberplate %>
+  </div>
+  <div class="field">
+    <%= f.label :automaker %><br>
+    <%= f.text_field :automaker %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

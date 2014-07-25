@@ -1,0 +1,27 @@
+<h1>Listing memberscars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numberplate</th>
+      <th>Automaker</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @memberscars.each do |memberscar| %>
+      <tr>
+        <td><%= memberscar.numberplate %></td>
+        <td><%= memberscar.automaker %></td>
+        <td><%= link_to 'Show', memberscar %></td>
+        <td><%= link_to 'Edit', edit_memberscar_path(memberscar) %></td>
+        <td><%= link_to 'Destroy', memberscar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Memberscar', new_memberscar_path %>

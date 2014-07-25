@@ -1,0 +1,37 @@
+<%= form_for(@visit) do |f| %>
+  <% if @visit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@visit.errors.count, "error") %> prohibited this visit from being saved:</h2>
+
+      <ul>
+      <% @visit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :when %><br>
+    <%= f.text_field :when %>
+  </div>
+  <div class="field">
+    <%= f.label :gas %><br>
+    <%= f.number_field :gas %>
+  </div>
+  <div class="field">
+    <%= f.label :odometer %><br>
+    <%= f.number_field :odometer %>
+  </div>
+  <div class="field">
+    <%= f.label :memo %><br>
+    <%= f.text_area :memo %>
+  </div>
+  <div class="field">
+    <%= f.label :memberscar_id %><br>
+    <%= f.number_field :memberscar_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numberplate:</strong>
+  <%= @memberscar.numberplate %>
+</p>
+
+<p>
+  <strong>Automaker:</strong>
+  <%= @memberscar.automaker %>
+</p>
+
+<%= link_to 'Edit', edit_memberscar_path(@memberscar) %> |
+<%= link_to 'Back', memberscars_path %>

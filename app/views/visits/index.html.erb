@@ -1,0 +1,33 @@
+<h1>Listing visits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>When</th>
+      <th>Gas</th>
+      <th>Odometer</th>
+      <th>Memo</th>
+      <th>Memberscar</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @visits.each do |visit| %>
+      <tr>
+        <td><%= visit.when %></td>
+        <td><%= visit.gas %></td>
+        <td><%= visit.odometer %></td>
+        <td><%= visit.memo %></td>
+        <td><%= visit.memberscar_id %></td>
+        <td><%= link_to 'Show', visit %></td>
+        <td><%= link_to 'Edit', edit_visit_path(visit) %></td>
+        <td><%= link_to 'Destroy', visit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Visit', new_visit_path %>
