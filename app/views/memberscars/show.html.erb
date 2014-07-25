@@ -10,5 +10,9 @@
   <%= @memberscar.automaker %>
 </p>
 
+<hr>
+<h3>来店</h3>
+<%= render 'visits/form' %>
+
 <%= link_to 'Edit', edit_memberscar_path(@memberscar) %> |
 <%= link_to 'Back', memberscars_path %>
