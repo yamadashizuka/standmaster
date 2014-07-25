@@ -10,10 +10,19 @@ class MemberscarsController < ApplicationController
   # GET /memberscars/1
   # GET /memberscars/1.json
   def show
+
+    # Visit
     @visit = @memberscar.visit
     if @visit.nil?
       @visit = @memberscar.build_visit
     end
+
+    # Inspection
+    @inspection = @visit.inspection
+    if @inspection.nil?
+      @inspection = @visit.build_inspection
+    end
+
   end
 
   # GET /memberscars/new

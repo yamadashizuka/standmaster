@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724153431) do
+ActiveRecord::Schema.define(version: 20140725050450) do
+
+  create_table "inspections", force: true do |t|
+    t.string   "mechanic"
+    t.text     "memo"
+    t.integer  "visit_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "memberscars", force: true do |t|
     t.string   "numberplate"
