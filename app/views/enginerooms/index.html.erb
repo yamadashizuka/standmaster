@@ -1,0 +1,27 @@
+<h1>Listing enginerooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Noise</th>
+      <th>Oilcolor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @enginerooms.each do |engineroom| %>
+      <tr>
+        <td><%= engineroom.noise_id %></td>
+        <td><%= engineroom.oilcolor_id %></td>
+        <td><%= link_to 'Show', engineroom %></td>
+        <td><%= link_to 'Edit', edit_engineroom_path(engineroom) %></td>
+        <td><%= link_to 'Destroy', engineroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Engineroom', new_engineroom_path %>

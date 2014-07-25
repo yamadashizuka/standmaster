@@ -12,10 +12,8 @@ class MemberscarsController < ApplicationController
   def show
 
     # Visit
-    @visit = @memberscar.visit
-    if @visit.nil?
-      @visit = @memberscar.build_visit
-    end
+    @visits = @memberscar.visits.all
+    @visit =  @memberscar.visits.build
 
     # Inspection
     @inspection = @visit.inspection
@@ -23,6 +21,13 @@ class MemberscarsController < ApplicationController
       @inspection = @visit.build_inspection
     end
 
+    # Engineroom
+    @engineroom = @inspection.engineroom
+    if @engineroom.nil?
+      @engineroom = @inspection.build_engineroom
+    end
+
+    
   end
 
   # GET /memberscars/new

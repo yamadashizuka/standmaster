@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Noise:</strong>
+  <%= @engineroom.noise_id %>
+</p>
+
+<p>
+  <strong>Oilcolor:</strong>
+  <%= @engineroom.oilcolor_id %>
+</p>
+
+<%= link_to 'Edit', edit_engineroom_path(@engineroom) %> |
+<%= link_to 'Back', enginerooms_path %>

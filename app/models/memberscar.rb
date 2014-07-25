@@ -1,3 +1,3 @@
 class Memberscar < ActiveRecord::Base
-  has_one :visit
+  has_many :visits
 end

@@ -12,11 +12,27 @@
 
 <hr>
 <h3>来店</h3>
+
+<% @visits.each do |visit| %>
+  <div>
+    <p><%= visit.when %></p>
+    <p><%= link_to 'Delete', visit_path(visit), method: :delete, data: { confirm: '削除してよろしいですか？' } %> </p>
+  </div>
+<% end %>
+
+
+
 <%= render 'visits/form' %>
 
 <hr>
 <h3>点検</h3>
 <%= render 'inspections/form' %>
+
+<hr>
+<h3>エンジンルーム</h3>
+<%= render 'enginerooms/form' %>
+
+
 
 <%= link_to 'Edit', edit_memberscar_path(@memberscar) %> |
 <%= link_to 'Back', memberscars_path %>
