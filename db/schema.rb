@@ -11,27 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725055551) do
-
-  create_table "add_inspection_id_to_enginerooms", force: true do |t|
-    t.integer  "inspection_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "add_inspection_id_to_enginerooms2", force: true do |t|
-    t.integer  "inspection_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "chasses", force: true do |t|
-    t.string   "tire"
-    t.string   "wheel"
-    t.integer  "inspection_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20140726023702) do
 
   create_table "enginerooms", force: true do |t|
     t.integer  "noise_id"
@@ -57,7 +37,7 @@ ActiveRecord::Schema.define(version: 20140725055551) do
   end
 
   create_table "visits", force: true do |t|
-    t.string   "when"
+    t.datetime "when",          limit: 255
     t.integer  "gas"
     t.integer  "odometer"
     t.text     "memo"

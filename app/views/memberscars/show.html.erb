@@ -13,15 +13,10 @@
 <hr>
 <h3>来店</h3>
 
-<% @visits.each do |visit| %>
-  <div>
-    <p><%= visit.when %></p>
-    <p><%= link_to 'Delete', visit_path(visit), method: :delete, data: { confirm: '削除してよろしいですか？' } %> </p>
-  </div>
-<% end %>
+<h4>来店履歴</h4>
+<%= render 'visits/index' %>
 
-
-
+<h4>来店の追加</h4>
 <%= render 'visits/form' %>
 
 <hr>

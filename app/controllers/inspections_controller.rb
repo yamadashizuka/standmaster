@@ -15,6 +15,7 @@ class InspectionsController < ApplicationController
   # GET /inspections/new
   def new
     @inspection = Inspection.new
+    @engineroom = @inspection.build_engineroom
   end
 
   # GET /inspections/1/edit
@@ -69,6 +70,6 @@ class InspectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inspection_params
-      params.require(:inspection).permit(:mechanic, :memo, :visit_id)
+      params.require(:inspection).permit(:mechanic, :memo, :visit_id, engineroom_attributes: [:noise_id, :oilcolor_id] )
     end
 end
