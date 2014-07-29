@@ -15,6 +15,8 @@ class VisitsController < ApplicationController
   # GET /visits/new
   def new
     @visit = Visit.new
+    @visit.build_inspection
+    @visit.inspection.build_engineroom
   end
 
   # GET /visits/1/edit
@@ -69,6 +71,6 @@ class VisitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def visit_params
-      params.require(:visit).permit(:when, :gas, :odometer, :memo, :memberscar_id)
+      params.require(:visit).permit(:when, :gas, :odometer, :memo, :memberscar_id, inspection_attributes: [:mechanic, :memo, engineroom_attributes: [:noise_id, :oilcolor_id]])
     end
 end

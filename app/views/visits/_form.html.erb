@@ -31,6 +31,33 @@
     <%= f.label :memberscar_id %><br>
     <%= f.number_field :memberscar_id %>
   </div>
+
+  <h2>点検</h2>
+  <%= f.fields_for :inspection do |inspection_fields| %>
+    <div class="field">
+      <%= inspection_fields.label :mechanic %><br>
+      <%= inspection_fields.text_field :mechanic %>
+    </div>
+    <div class="field">
+      <%= inspection_fields.label :memo %><br>
+      <%= inspection_fields.text_area :memo %>
+    </div>
+
+    <h3>エンジンルーム点検</h3>
+    <%= inspection_fields.fields_for :engineroom do |engineroom_fields| %>
+      <div class="field">
+        <%= engineroom_fields.label :noise_id %><br>
+        <%= engineroom_fields.number_field :noise_id %>
+      </div>
+      <div class="field">
+        <%= engineroom_fields.label :oilcolor_id %><br>
+      <%= engineroom_fields.number_field :oilcolor_id %>
+      </div>
+    <% end %>
+
+  <% end %>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
