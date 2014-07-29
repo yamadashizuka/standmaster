@@ -25,7 +25,7 @@
   </div>
 
   <h2>エンジンルームの点検</h2>
-<%= f.fields_for :engineroom do |engineroom_fields| %>
+  <%= f.fields_for :engineroom do |engineroom_fields| %>
     <%= engineroom_fields.number_field :noise_id %>
     <%= engineroom_fields.number_field :oilcolor_id %>
   <% end %>
