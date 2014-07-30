@@ -11,22 +11,12 @@
 </p>
 
 <hr>
-<h3>来店</h3>
-
-<h4>来店履歴</h4>
+<h3>来店履歴</h3>
 <%= render 'visits/index' %>
 
-<h4>来店の追加</h4>
+<hr>
+<h3>今回の来店情報</h3>
 <%= render 'visits/form' %>
-
-<hr>
-<h3>点検</h3>
-<%= render 'inspections/form' %>
-
-<hr>
-<h3>エンジンルーム</h3>
-<%= render 'enginerooms/form' %>
-
 
 
 <%= link_to 'Edit', edit_memberscar_path(@memberscar) %> |
