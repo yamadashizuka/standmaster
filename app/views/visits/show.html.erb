@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<h1>来店</h1>
 <p>
   <strong>When:</strong>
   <%= @visit.when %>
@@ -24,6 +25,12 @@
   <strong>Memberscar:</strong>
   <%= @visit.memberscar_id %>
 </p>
+
+<h2>点検</h2>
+<%= render 'inspections/show', inspection: @visit.inspection %>
+
+<h3>エンジンルーム</h3>
+<%= render 'enginerooms/show', engineroom: @visit.inspection.engineroom %>
 
 <%= link_to 'Edit', edit_visit_path(@visit) %> |
 <%= link_to 'Back', visits_path %>

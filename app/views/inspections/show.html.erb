@@ -1,19 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Mechanic:</strong>
-  <%= @inspection.mechanic %>
-</p>
-
-<p>
-  <strong>Memo:</strong>
-  <%= @inspection.memo %>
-</p>
-
-<p>
-  <strong>Visit:</strong>
-  <%= @inspection.visit_id %>
-</p>
+<%= render 'show', inspection: @inspection%>
 
 <%= link_to 'Edit', edit_inspection_path(@inspection) %> |
 <%= link_to 'Back', inspections_path %>
